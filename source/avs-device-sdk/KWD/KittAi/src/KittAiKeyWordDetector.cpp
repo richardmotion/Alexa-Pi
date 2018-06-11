@@ -119,7 +119,11 @@ KittAiKeyWordDetector::KittAiKeyWordDetector(
     std::chrono::milliseconds msToPushPerIteration) :
         AbstractKeywordDetector(keyWordObservers, keyWordDetectorStateObservers),
         m_stream{stream},
-        m_maxSamplesPerPush{(audioFormat.sampleRateHz / HERTZ_PER_KILOHERTZ) * msToPushPerIteration.count()} {
+        /**
+         * The below change was taken from marath007. https://github.com/marath007
+         * https://raw.githubusercontent.com/marath007/AnimatedProject/master/KittAiKeyWordDetector.cpp
+         */
+        m_maxSamplesPerPush{(audioFormat.sampleRateHz / HERTZ_PER_KILOHERTZ) * static_cast<unsigned int>(msToPushPerIteration.count())} {
     std::stringstream sensitivities;
     std::stringstream modelPaths;
     for (unsigned int i = 0; i < kittAiConfigurations.size(); ++i) {

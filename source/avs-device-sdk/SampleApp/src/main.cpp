@@ -18,6 +18,7 @@
 #include <cstdlib>
 #include <string>
 
+#include <wiringPi.h>
 /**
  * Function that evaluates if the SampleApp invocation uses old-style or new-style opt-arg style invocation.
  *
@@ -44,6 +45,11 @@ bool usesOptStyleArgs(int argc, char* argv[]) {
  * @return @c EXIT_FAILURE if the program failed to initialize correctly, else @c EXIT_SUCCESS.
  */
 int main(int argc, char* argv[]) {
+
+    wiringPiSetup () ;
+    pinMode (0, OUTPUT) ;
+    pinMode (1, OUTPUT) ;
+
     std::vector<std::string> configFiles;
     std::string pathToKWDInputFolder;
     std::string logLevel;

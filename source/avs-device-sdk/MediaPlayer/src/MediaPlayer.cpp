@@ -586,7 +586,11 @@ bool MediaPlayer::setupPipeline() {
     std::string audioSinkElement;
     ConfigurationNode::getRoot()[MEDIAPLAYER_CONFIGURATION_ROOT_KEY].getString(
         MEDIAPLAYER_AUDIO_SINK_KEY, &audioSinkElement, "autoaudiosink");
-    m_pipeline.audioSink = gst_element_factory_make(audioSinkElement.c_str(), "audio_sink");
+    /**
+     * The below change was taken from marath007. https://github.com/marath007
+     * https://raw.githubusercontent.com/marath007/AnimatedProject/master/MediaPlayer.cpp
+     */
+    m_pipeline.audioSink = gst_element_factory_make("alsasink", "audio_sink");
     if (!m_pipeline.audioSink) {
         ACSDK_ERROR(LX("setupPipelineFailed")
                         .d("reason", "createAudioSinkElementFailed")

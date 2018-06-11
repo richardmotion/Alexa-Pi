@@ -53,3 +53,4 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
       rt m pthread asound)
 endif()
 
+target_link_libraries(SampleApp "-lwiringPi")
