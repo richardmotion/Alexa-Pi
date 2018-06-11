@@ -421,7 +421,7 @@ void UIManager::printState() {
             case DialogUXState::LISTENING:
                 digitalWrite (0, HIGH);
                 ConsolePrinter::prettyPrint("Listening...");
-                system("play /home/pi/avs-sounds/WHAT.wav");
+                // system("play /some/path/foo.wav");
                 return;
             case DialogUXState::THINKING:
                 digitalWrite (0, HIGH);
