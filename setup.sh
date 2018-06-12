@@ -39,7 +39,6 @@ safe sed -i '11s|.*|        "deviceSerialNumber":"'"$deviceserial"'",|' "$CONFIG
 safe sed -i '7s|.*|        "databaseFilePath":"'"$DB"'/cblAuthDelegate.db"|' "$CONFIG/AlexaClientSDKConfig.json"
 safe sed -i '38s|.*|        "databaseFilePath":"'"$DB"'/miscDatabase.db"|' "$CONFIG/AlexaClientSDKConfig.json"
 safe sed -i '45s|.*|        "databaseFilePath":"'"$DB"'/miscDatabase.db"|' "$CONFIG/AlexaClientSDKConfig.json"
-safe sed -i '45s|.*|        "databaseFilePath":"'"$DB"'/settings.db"|' "$CONFIG/AlexaClientSDKConfig.json"
 safe sed -i '52s|.*|        "databaseFilePath":"'"$DB"'/settings.db",|' "$CONFIG/AlexaClientSDKConfig.json"
 safe sed -i '64s|.*|        "databaseFilePath":"'"$DB"'/certifiedSender.db"|' "$CONFIG/AlexaClientSDKConfig.json"
 safe sed -i '71s|.*|        "databaseFilePath":"'"$DB"'/notifications.db"|' "$CONFIG/AlexaClientSDKConfig.json"
