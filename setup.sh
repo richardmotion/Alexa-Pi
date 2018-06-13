@@ -104,6 +104,6 @@ safe make SampleApp -j2
 safe cp -v "$CONFIG"/AlexaClientSDKConfig.json "$BUILD"/Integration/AlexaClientSDKConfig.json
 
 echo "Finished!"
-echo "Run ./debug.sh to test"
+echo "Run ./l337.sh run to test"
 
 exit 0
