@@ -5,7 +5,7 @@
  [Service]
  Type=simple
  StandardInput=tty-force
- ExecStart=/home/pi/git/l3-37-alexa_patchbots/l337.sh run
+ ExecStart=
 
  [Install]
  WantedBy=multi-user.target
