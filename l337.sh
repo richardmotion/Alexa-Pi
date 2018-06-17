@@ -3,7 +3,7 @@
 #
 # Helper script to run or recompile the SampleApp to test changes
 #
-# Usage: ./l337.sh [run|rebuild]
+# Usage: ./l337.sh [run|rebuild|debug]
 #
 
 shout() { echo "$0: $*" >&2; }
@@ -20,12 +20,18 @@ CONFIG="$CWD/config"
 DB="$CWD/sqlite-db"
 
 usage (){
-  echo -e "Usage: ${0##*/} [run|rebuild]"
+  echo -e "Usage: ${0##*/} [run|rebuild|debug]"
   exit 111
 }
 
 # Run the SampleApp. ctrl+c to stop.
 run(){
+    safe cd "$BUILD"/SampleApp/src
+    safe ./SampleApp "$BUILD"/Integration/AlexaClientSDKConfig.json "$SOURCE"/snowboy/resources/alexa
+}
+
+# Run the SampleApp in debug mode
+debug(){
     safe cd "$BUILD"/SampleApp/src
     safe ./SampleApp "$BUILD"/Integration/AlexaClientSDKConfig.json "$SOURCE"/snowboy/resources/alexa DEBUG9
 }
@@ -62,9 +68,11 @@ rebuild() {
 [ $# -gt 1 ] && usage
 
 case "$1" in
-      run) run
+        run) run
              ;;
     rebuild) rebuild
+             ;;
+      debug) debug
              ;;
           *) usage
              ;;
