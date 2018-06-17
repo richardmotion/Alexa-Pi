@@ -72,6 +72,18 @@ If all went well, you'll see the following:
 Now you try asking it something!
 > L3, what time is it?
 
+### Starting on boot
+---
+If you want to start this app automatically on boot, you can run autostart.sh.
+You will need to run it via sudo because systemd requires root privileges
+```bash
+sudo ./autostart.sh on
+```
+To disable it from starting on boot:
+```bash
+sudo ./autostart.sh off
+```
+
 ### Making changes
 ---
 If you want to make futher code changes you'll need to recompile the app.
