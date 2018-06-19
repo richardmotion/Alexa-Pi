@@ -49,7 +49,8 @@ safe sed -i '424s|.*|                system("play '"$CWD"'/sounds/WHAT.wav");|' 
 
 # Install required packages
 shout "Installing required packages..."
-safe sudo apt-get --assume-yes -qq install \
+safe sudo apt-get update --assume-yes
+safe sudo apt-get --assume-yes -q install \
     build-essential \
     cmake \
     doxygen \
