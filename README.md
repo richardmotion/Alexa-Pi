@@ -83,6 +83,14 @@ To disable it from starting on boot:
 ```bash
 sudo ./autostart.sh off
 ```
+To stop the service after making it start on boot:
+```bash
+sudo systemctl stop l337
+```
+To start the service after making it start on boot:
+```bash
+sudo systemctl start l337
+```
 
 ### Making changes
 ---
