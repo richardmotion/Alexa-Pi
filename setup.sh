@@ -43,8 +43,8 @@ safe sed -i '52s|.*|        "databaseFilePath":"'"$DB"'/settings.db",|' "$CONFIG
 safe sed -i '64s|.*|        "databaseFilePath":"'"$DB"'/certifiedSender.db"|' "$CONFIG/AlexaClientSDKConfig.json"
 safe sed -i '71s|.*|        "databaseFilePath":"'"$DB"'/notifications.db"|' "$CONFIG/AlexaClientSDKConfig.json"
 
-# Update UIManager.cpp to use correct location for response .wav
-safe sed -i '424s|.*|                system("play '"$CWD"'/sounds/WHAT.wav");|' "$SOURCE/avs-device-sdk/SampleApp/src/UIManager.cpp"
+# Update UIManager.cpp to use correct location for response.wav
+safe sed -i '424s|.*|                system("play '"$CWD"'/sounds/reponse.wav");|' "$SOURCE/avs-device-sdk/SampleApp/src/UIManager.cpp"
 
 
 # Install required packages
@@ -106,5 +106,3 @@ safe cp -v "$CONFIG"/AlexaClientSDKConfig.json "$BUILD"/Integration/AlexaClientS
 
 echo "Finished!"
 echo "Run ./l337.sh run to test"
-
-exit 0

@@ -27,14 +27,14 @@ on(){
     safe sed -i '8s|.*| ExecStart='"$CWD"'/l337.sh run|' "$CONFIG"/l337.service
     safe cp -v "$CONFIG"/l337.service /lib/systemd/system/l337.service
     safe systemctl daemon-reload
-    safe systemctl enable l337
+    safe systemctl enable l337.service
     echo "l337 enabled on boot"
     echo "Run 'systemctl start l337' to start, or reboot"
 }
 
 # Disable l337 from starting on boot
 off(){
-    safe systemctl disable l337
+    safe systemctl disable l337.service
     safe systemctl daemon-reload
     echo "l337 disabled on boot."
 }
@@ -52,4 +52,3 @@ case "$1" in
           ;;
 esac
 
-exit 0
