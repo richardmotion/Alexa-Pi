@@ -44,7 +44,7 @@ safe sed -i '64s|.*|        "databaseFilePath":"'"$DB"'/certifiedSender.db"|' "$
 safe sed -i '71s|.*|        "databaseFilePath":"'"$DB"'/notifications.db"|' "$CONFIG/AlexaClientSDKConfig.json"
 
 # Update UIManager.cpp to use correct location for response.wav
-safe sed -i '424s|.*|                system("play '"$CWD"'/sounds/reponse.wav");|' "$SOURCE/avs-device-sdk/SampleApp/src/UIManager.cpp"
+safe sed -i '424s|.*|                system("play '"$CWD"'/sounds/response.wav");|' "$SOURCE/avs-device-sdk/SampleApp/src/UIManager.cpp"
 
 
 # Install required packages
