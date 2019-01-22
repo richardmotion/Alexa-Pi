@@ -1,19 +1,5 @@
-## L3-37 Alexa
----
-Companion code for the following Project by PatchBOTS
+## Alexa-Pi
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=H4KK212-Jss
-" target="_blank"><img src="http://img.youtube.com/vi/H4KK212-Jss/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
-
-Video Tutorial:
-
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=nn37prRCmNE
-" target="_blank"><img src="http://img.youtube.com/vi/H4KK212-Jss/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
-
-
----
 ### Prerequisites:
 An Amazon Developer account, and an Alexa Voice Service product profile.
 Intructions here:
@@ -54,7 +40,6 @@ set the proper directory paths required to run.
 * source/avs-device-sdk/SampleApp/src/UIManager.cpp
 
 The setup script will install all the required packages and compile the code.
-Go grab a beer (or two), it will take awhile to finish.
 
 Once the setup finishes, you can now start the app by using the l337.sh script.
 ```bash
@@ -77,7 +62,7 @@ If all went well, you'll see the following:
 ```
 
 Now you try asking it something!
-> L3, what time is it?
+> Alexa, what time is it?
 
 ### Starting on boot
 ---
@@ -109,9 +94,6 @@ and waste time trying to install the required packages.
 ```
 
 ### Further reading:
----
-PathBOTS github:
-<https://github.com/PatchBOTS>
 
 AVS Service state with LEDs:
 <https://developer.amazon.com/docs/alexa-voice-service/indicate-device-state-with-leds.html>
